@@ -2,7 +2,7 @@
 
 - Modification du themes eldy
 
-![ScreenShot](https://github.com/koalasc/dolibarr-4.0.1/theme/eldy/view.jpg)
+![ScreenShot](https://github.com/koalasc/dolibarr-4.0.1/blob/master/theme/eldy/view.jpg)
 
 
 - Modification du workflow
