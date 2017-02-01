@@ -1,0 +1,24 @@
+# ProductBATCH language file - en_US - ProductBATCH
+ManageLotSerial=Koristi serijski broj
+ProductStatusOnBatch=Da (serijski broj obavezan)
+ProductStatusNotOnBatch=Ne (serijski broj se ne koristi)
+ProductStatusOnBatchShort=Da
+ProductStatusNotOnBatchShort=Ne
+Batch=Serija
+atleast1batchfield=Rok trajanja ili rok prodaje serije
+batch_number=Serijski broj
+BatchNumberShort=Serija
+EatByDate=Eat-by date
+SellByDate=Sell-by date
+DetailBatchNumber=Detalji Serije
+DetailBatchFormat=Serija: %s - Rok trajanja: %s - Rok prodaje: %s (kol. %d)
+printBatch=Serija: %s
+printEatby=Rok trajanja: %s
+printSellby=Rok prodaje: %s
+printQty=Kol: %d
+AddDispatchBatchLine=Dodaj liniju za "Shelf Life" raspodelu 
+WhenProductBatchModuleOnOptionAreForced=Kada je modul Serija/Serijski broj aktivan, uvećanje/smanjenje zaliha je forsiran na poslednji izbor i ne može biti izmenjen. Druge opcije mogu biti podešene kako želite.
+ProductDoesNotUseBatchSerial=Ovaj proizvod ne koristi serijski broj
+ProductLotSetup=Setup of module lot/serial
+ShowCurrentStockOfLot=Show current stock for couple product/lot
+ShowLogOfMovementIfLot=Show log of movements for couple product/lot

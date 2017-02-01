@@ -1,0 +1,145 @@
+# Dolibarr language file - fr_FR - customfields standard labels
+CHARSET= UTF-8
+
+#### ADMIN CONFIG INTERFACE ####
+
+# Main title
+CustomFieldsSetup= Interface de configuration des champs personnalisés
+
+# Embedded tab
+CustomFields= Champs personnalisés
+
+# Description (on admin's modules list)
+Module8500Desc= Outil d'ajout de champs personnalisés
+Module8501Desc= Ajoute dans tous les PDF re-générés une page listant tous les champs personnalisés (test pour développeurs)
+
+# Long Description (to help user on first time usage)
+CustomFieldsLongDescription= Ce module vous permet de facilement ajouter et gérer vos propres champs personnalisés, puis de les utiliser dans les documents PDF et ODT, ou de toute autre manière que vous voulez.<br /><br />Ici, vous pouvez ajouter vos propres champs dans les différents modules de Dolibarr: cliquez sur l'onglet correspondant au module que vous souhaitez, puis cliquez sur le bouton Nouveau champ dans le coin en bas à droite de cette page et remplir les données requises. Aussitôt le champ créé, il apparaitra et sera modifiable sur la page du module.<br />Si vous souhaitez gérer un champ, vous pouvez le modifier en cliquant sur la petite icône sur sa droite, ou le supprimer avec l'icône de suppression.<br />Pour utiliser votre champ dans votre fichier PDF, appelez la fonction customfields_fill_object($object) puis utilisez $object->cf_variable à accéder à la valeur du champ (voir la colonne Variable ci-dessous). Avec ODT, il suffit d'utiliser {cf_variable}.<br /><br />Il y a bien plus que vous pouvez faire avec CustomFields, veuillez <a href="http://wiki.dolibarr.org/index.php/Module_CustomFields_FR" target="_blank">lire la page du wiki</a> pour plus d'informations.
+
+# Error messages
+TableDoesNotExist= La table de champs personnalisés pour ce module n'existe pas encore! Veuillez créer la table avant de pouvoir créer des champs.<br />Voulez-vous la créer maintenant?
+
+# Modules tabs
+facture= Facture client
+propal= Proposition commerciale
+product= Produits/Services
+commande= Commandes client
+societe= Tiers
+socpeople= Contacts
+commande_fournisseur= Commande fournisseur
+facture_fourn= Facture fournisseur
+adherent= Adhérent
+actioncomm= Agenda
+projet= Projets
+projet_task= Tâches
+contrat= Contrats
+fichinter= Interventions
+don= Dons
+deplacement= Note de frais
+tva= Règlement TVA
+expedition= Expéditions
+facturedet= Ligne facture client
+propaldet= Ligne proposition commerciale
+commandedet= Ligne commande client
+commande_fournisseurdet=  Ligne commande fournisseur
+facture_fourn_det= Ligne facture fournisseur
+user= Utilisateur
+contratdet= Ligne contrat
+fichinterdet= Ligne intervention
+
+# Table headers
+Fieldname= Nom du champ
+Datatype= Type du champ
+Variable= Variable
+
+# Buttons
+CreateTable= Créer la table
+NewField= Nouveau champ
+
+# Attributes labels
+FieldEdition= Modification d'un champ
+Label= Libellé
+FieldName= Nom du champ
+AlphaNumOnlyCharsAndNoSpace= seulement caractères alphanumériques sans espaces
+Type= Type
+EnumValues= Valeurs pour la Liste déroulante
+CanBeNull?= Accepter les valeurs vides ?
+Constraint= Contrainte
+CustomSQLDefinition= Definition SQL personnalisée
+CustomSQL= Requête SQL personnalisée
+RecopyOnConversion= Recopie lors de la conversion
+Required= Requis
+NotEditable= Non modifiable
+SourceField= Champ d'origine
+CascadingField= Cascade de champs
+CascadeCustom= Cascade manuelle
+CascadeParentField= Champ parent
+CascadeJoinFrom= Joindre depuis la colonne
+CascadeJoinOn= Joindre sur la colonne du champ parent
+Hide= Invisible
+Duplicate= Dupliquer
+DuplicateFrom= Dupliquer depuis le champ
+DuplicateFromToPreloadAtCreation= Précharger la valeur à la création depuis
+LeaveEmptyToDisable= laisser vide pour désactiver
+Optional= Optionnel
+
+# Fields values
+PleaseEditLangFile= Veuillez éditer le ficher de langue
+Textbox= Zone de texte simple
+Areabox= Zone de texte étendue HTML
+AreaboxNoHTML= Zone de texte étendue (sans HTML)
+YesNoBox= Choix Oui/Non
+TrueFalseBox= Choix Vrai/Faux
+DropdownBox= Liste déroulante
+DateBox= Date
+DateTimeBox= Date et heure
+Integer= Nombre entier
+Float= Nombre à virgule
+Double= Nombre à virgule (double précision)
+
+True= Vrai
+False= Faux
+
+# Attributes descriptions and notes
+SizeDesc=ex: 256 pour une zone de texte, <br />ou "premier","deuxio","tertio" AVEC les guillemets et virgules pour une liste déroulante,  et si vous voulez utiliser des caractères spéciaux comme ', utilisez la forme html comme &apos;
+SizeNote=Note: requis seulement pour Liste déroulante, pour les autres types vous pouvez laisser ceci vide.
+CustomSQLDefinitionDesc=la définition personnalisée du champ sera ajoutée à la suite de toutes les définitions au-dessus - Type, Taille, etc.
+CustomSQLDesc=sera executée (UNE seule fois!) après la création/modification du champ selon les paramètres au-dessus
+RecopyOnConversionDesc= (ex: d'une proposition commerciale en une facture)
+RecopyFieldHelper= Vide = même nom du champ
+RecopyCanBeEmptyHelper= Recopie activée: vous pouvez laisser ce champ vide, il devrait être recopié depuis l'objet précédent dès la création.
+CascadingFieldDesc= Propage la valeur du champ parent pour limiter les valeurs de ce champ. Cela permet de construire une chaine de listes déroulantes en cascade. La cascade sera gérée automatiquement, sauf si vous choisissez l'option Cascade Manuelle, auquel cas vous devrez vous-même implémenter une fonction pour gérer la cascade (plus d'infos dans fields/customfields_fields_ajax_custom.lib.php.example).
+CascadeCustomHelper= voir fields/customfields_fields_ajax_custom.lib.php
+CascadeJoinFromHelper= Contrainte enfant ex, fk_pays
+CascadeJoinOnHelper= Contrainte parent ex, rowid
+HideHelper= utilisez Cascade Manuelle et une fonction AJAX manuelle et de surcharge pour gérer dynamiquement la visibilité conditionnellement au parent
+SeparatorHelper= la séparation sera placée en haut
+DuplicateDesc= Duplique la valeur d'un autre champ (standard ou custom field) depuis $object (ex: client->rowid sera traduit en $object->client->rowid) ou depuis $_GET ou $_POST.
+DuplicateFromHelper= ex: client->rowid ou mycustomfield
+DuplicateCanBeEmptyHelper= Duplication activée: vous pouvez laisser ce champ vide, il sera rempli au moment de la création/modification de l'objet en cours.
+CascadeCompatible= Compatible avec les cascades.
+
+# Confirm forms
+ConfirmDeleteCustomField=Voulez-vous vraiment supprimer le champ suivant: 
+CautionDataLostForever=ATTENTION: toutes les données stockés dans ce champ seront perdues et irrécupérables!
+DeleteCustomField=Supprimer un champ personnalisé
+
+# AutoUpdate messages
+ModuleVersion=Version du module
+AutoUpdateClickHere=Cliquez ici pour vérifier les mises à jour.
+AutoUpdateCheckingStatusPleaseWait=Vérification des mises à jour en ligne, veuillez patienter quelques secondes...
+AutoUpdateCheckingUnreachable=Impossible de vérifier les mises à jour (le serveur n'est pas disponible). Veuillez réessayer plus tard.
+AutoUpdateCheckingOK=Vous avez la dernière version!
+
+##### COMMENT #####
+
+type_de_prestation=Titre de la prestation
+prestation_comp=Contenu de la prestation
+horaires=Horaire de la prestation
+lieu_reception=Adresse/Lieu de la prestation
+piece_pers=Nombres de pièces par personnes
+nombre_d_invites=Nombres d'invités ( pas d'effet global ! )
+descfourn=Information pour les fournisseurs
+refclient=Client
+daterecep=Date reception client
+refcc=Reférence commande client

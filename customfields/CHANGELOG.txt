@@ -1,0 +1,107 @@
+CHANGELOG
+==========
+
+2016
+-------
+=> Read commits log on the github: https://github.com/LRQ3000/dolibarr_customfields
+
+2015
+-------
+* fix: number types now also accepts values with a comma instead of a dot to separate the decimals.
+* add: decimal and numeric types to store exact values (they are Fixed-Point Types (Exact Value)). See MySQL documentation http://dev.mysql.com/doc/refman/5.6/en/fixed-point-types.html.
+* add: overloading functions are now called after cloning or recopy (except view and viewfull, all the others are automatically triggered). For example, if you did a total price modification based on a coefficient (global or per product), the price update will be triggered automatically (no need to manually edit each product and save it to trigger the overloading functions).
+* add: call_overloading_function($type, $currentmodule, $fieldname, $params) in customfields_aux.lib.php, a facade function to easily call overloading functions.
+* fix: cascaded children custom fields with a constraint on a table with a foreign key could not be set to an empty value, else the sql query was rejected (custom fields values were not committed).
+* fix: error history and printing in customfields.class.php. Main change for user is that now when there is a bug when creating/updating custom fields values, errors will be correctly displayed.
+* fix: warning for children cascade fields on update forms.
+* add: constrained custom fields will now automatically create a link to open the datasheet of the linked object (thank's to Clément Georget for the idea).
+* add: Duplication options now can duplicate $_GET and $_POST values in addition to $object.
+* add: duplicate_creation_from option (preload duplicate value directly on the creation form instead of waiting that the object is created for the value to be duplicated).
+* fix: Ajax when Cascade option was enabled was broken if CustomFields was placed in the htdocs/custom/ folder.
+* add: CustomFields support for Contracts Lines.
+* add: customfields tabs in various admin modules (so that customfields can be configured directly in the context of the parent module, instead of going into the customfields admin page).
+* fix: td width and td colspan has been updated with the new values for native Dolibarr forms.
+* fix: duplication option will now duplicate empty values too.
+* fix: more resilient ODT substitution, will now just print an error when a value is not a scalar instead of failing.
+* fix: edge case fatal error on ODT/PDF document generation that happened because CustomFields tried to substitute lines as a standard field (Catchable fatal error: Object of class stdClass could not be converted to string in /htdocs/core/lib/functions.lib.php on line 3769).
+* fix: Recursive Remote Fields Access now allow to beautify values of recursively fetched custom fields (automatic call to printField() and printFieldPDF()).
+* fix: Constraint WHERE clause not reloaded on edit custom field screen when containing a string (double quotes). Also fix CustomSQLRequest and CustomSQLDefinition fields GETPOST reloading.
+* fix: various php notices.
+* add: Constraint WHERE clause in configuration menu (allows to set static conditions without using a sql view).
+* fix: CustomFields and CustomFieldsPDFTest now works again correctly without warnings when placed inside an alternative plugins folder (eg: /htdocs/custom), because DOL_DOCUMENT_ROOT_ALT was removed since Dolibarr 3.5 ( replace by dol_include_once or include dol_buildpath() ).
+* add: import support (experimental feature, tested quickly and it works). Works only on Dolibarr > 3.7 (or you can backport these changes, 3 lines of code to change: https://github.com/Dolibarr/dolibarr/pull/2386/files)
+* fix: modCustomFields.class.php compatibility with PHP4 (Parse error: syntax error, unexpected '[' in /dolibarr/htdocs/customfields/core/modules/modCustomFields.class.php on line 75).
+* fix: date and datetime types custom fields will now show locale date format instead of universal one (as per the Dolibarr standard).
+* fix: regression: broken hour and minute saving in datetime type custom fields, which regression was introduced with "issue with duplicated customfields of types textarea or date on free and predefined products".
+* fix: a few potential issues with AJAX automatic management (collisions between children fields updates).
+* add: show_on_cascade option for hidden fields.
+* add: notice on fields with duplication enabled in creation form.
+* fix: warning on module's administration page (caused by export injection attempt in the wrong context).
+* fix: on creation form with edit action (when user clicks on Modify), cascading didn't filter values of children fields relative to an already set parent field (had to reselect the parent's value to filter children). This is now fixed, cascading children fields are filtered.
+* add: export injection (custom fields will now be exported using the Dolibarr's native export module). Import is not (yet) implemented. Export filtering also works, and constrained fields will show the nice smart value substituted values at filtering (in the resulting exported file, only the rowid will be shown).
+* fix: edge case that prevented custom fields from appearing in supplier orders lines starting from Dolibarr 3.6.
+* add: failsafe for recopy option in case the target module does not implement the createFrom hook.
+* add: autoupdate now show a nice changelog diff with highlight colors to quickly see what's been added.
+* fix: potential security issue: duplication now uses varvar() auxiliary function instead of eval().
+* add: duplication extra option: this allows to force a custom field to always duplicate another field's value (whether it's a custom field or any Dolibarr standard field).
+* update: compatible with new call_trigger() for Dolibarr > 3.7.0.
+* add: Recursive Remote Fields Access in ODT, PDF and any PHP code using customfields_fill_object() (managed by customfields_fill_object() and fetchReferencedValuesRec()).
+* fix: $object->parent_object has been removed from overloading functions, replaced by $object which now directly references the original object (this uniformizes at creation and at edition: the CustomFields trigger now always get a full $object in arguments, and pass it onto overloading functions).
+* add: support for custom fields in User module.
+* add: $object->parent_object to access parent object methods and properties inside overloading functions type "save", "savefull" and "aftersave" (before, the parent object was unaccessible from thes overloading types but was accessible with other types).
+* add: overloading function type "aftersave" to trigger commands after a custom field is saved into the database.
+
+2014 (up to v3.3.10)
+-------
+* update: auto-updating can now be disabled + checks updates only on-demand by clicking (avoids too many requests).
+* add: auto-updating mini facility on admin panel (doesn't update automatically yet, but it shows the latest version available and the changelog).
+* update: CustomFields admin panel anchor and automatically scrolls down to custom fields creation / edit form.
+* fix: unbalanced display of fields below a separator.
+* add: separator between fields as an extra option.
+* update: custom Ajax functions behaviour have been modified: normal functions will still allow CustomFields automatic management afterwards (this way it allows to do additional processing like conditionally hiding/showing fields), and full custom functions stop CustomFields automatic management (allowing to manually set the values), but the returned value should now always be an associative array, full functions should not print anymore (they still can and die() after anyway).
+* add: showInputFieldAjax() now supports two more attributes types: 'css' to change the CSS, and 'attr' to change any HTML attribute.
+* add: extra option: hide.
+* add: $fields (all fields structures) are now systematically supplied for all overloading and custom ajax functions.
+* update: completely converted $extra object into a fully associative array, this allows to avoid JSON decoding mismatching (will now always decode as an associative array instead of guessing), and allows to easily append/replace keys and values recursively in $extra (concretely, it's easy for an user to update the $extra options).
+* update: provide multiple cascade children fields possibility by flipping upside down the way automatic cascading is managed (before: stored in parent, now: stored in children and parent stores a list of children). Custom ajax functions also are changed: they now have more parameters and they are to be named following the child field (before it was the parent field's name).
+* fix: typo in colspan management on create sheets.
+* update: fetchReferencedValuesList() has been enhanced to provide an easy way to fetch linked records of constrained fields.
+* add: cascading dropdown lists with AJAX support.
+* add: AJAX support in CustomFields.
+* fix: more input sanitization in CustomFields class to prevent XSS and SQL injections.
+* fix: select types now has the class "flat" and thus an uniformized look with other Dolibarr select boxes.
+* fix: edge case when php://input was empty when a trigger was activated (for example with company_modify). Thus now the Modify button now correctly saves customfields in the Third-Party / Society tab.
+* fix: modify button now saves customfields correctly in Project and Task modules.
+* add: new field type textraw (TextArea NoHTML) to save multiline text without any html formatting (great for PDF!).
+* fix: conf_customfields.lib.php was not even a php file, the end tag ?> was missing!
+* fix: warning in trigger because of using [] instead of array() (damn Python habits!).
+* add: datetime now uses a nice widget to select the date in a calendar and the time in dropdown lists.
+* fix: product lines customfields are now correctly remembered (when an error happens) and correctly forgotten when the line is added (fields are cleared).
+* fix: a regression with date customfield type which prevented the day, month and year fields to be correctly read. This means that date that weren't in french locale may have suffered incorrect storage issues.
+* fix: save and savefull should now work also at creation (not only at edition), and on creation/edition of lines customfields.
+* fix: save and savefull overloading functions should now be called _prior_ saving edition, not after as they did before.
+* fix: warnings when recopying/converting an object where no customfield was setup (eg: propal -> invoice and no customfields set for propal or invoice).
+* fix: weird encoding of textarea fields (because of new way to populate $object with customfields in customfields's trigger file: all inputs are urlencoded, thus they must be urldecoded before inserting into db).
+* fix: issue with duplicated customfields of types textarea or date on free and predefined products, the JS widgets (calendar and CKeditor) did not work correctly and values were not consistently saved.
+
+2013 (up to v3.2.16)
+----------------------------
+* fix: show SQL default value for not editable fields (unless there is an overloading function)
+* fix: workaround for some systems where num_count returns 2 instead of 1 row when there's only 1 row (which prevented the creation of constrained custom fields on those systems).
+* add: notice on creation of a new object (eg: a new invoice, converted from a commercial offer) when RecopyOnConversion is enabled for the fields where the option is enabled
+* add: translations for Other Options and RecopyOnConversion
+* add: recopy on cloning for products' lines
+* add: recopy on cloning is now supported (and enabled by default for all custom fields), fixed the copying of rowid field
+* add: support for orderstoinvoice (Facturer les commandes)
+* fix: task creation page now correctly shows tasks custom fields (instead of project custom fields)
+* fix: small speed enhancement when editing/saving a field
+* fix: sql columns case compatibility enhanced
+* fix: recopy now should correctly copy the fields in the correct order for the products lines
+* add: recopy on conversion and recopy_field
+* fix: setextra() when upserting a field with the same name as another from another module, the other fields with the same name were having their extra options completely deleted and only the latest upserted remained
+* fix: locale bugs when PDF printing foreign characters not supported by ISO-8859-1
+* add: required custom fields
+* add: not editable custom fields
+* add: reordering of custom fields
+* add: confirm box when deleting a custom field and associated content
+* add: extra options. It should now be possible to add a lot of extra functionalities that just weren't possible before using only standard SQL metadata.

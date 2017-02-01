@@ -1,0 +1,67 @@
+# Dolibarr language file - Source file is en_US - sendings
+RefSending=Ref. isporuke
+Sending=Isporuka
+Sendings=Isporuke
+AllSendings=Sve otpremnice
+Shipment=Pošiljka
+Shipments=Pošiljke
+ShowSending=Prikaži otrpemnice
+Receivings=Dostavne primke
+SendingsArea=Sučelje otprema
+ListOfSendings=Popis pošiljki
+SendingMethod=Metoda dostave
+LastSendings=Zadnjih %s isporuka
+StatisticsOfSendings=Statistike pošiljki
+NbOfSendings=Broj pošiljki
+NumberOfShipmentsByMonth=Broj pošiljki tijekom mjeseca
+SendingCard=Kartica otpreme
+NewSending=Nova pošiljka
+CreateASending=Kreiraj pošiljku
+QtyShipped=Količina poslana
+QtyToShip=Količina za poslat
+QtyReceived=Količina primljena
+KeepToShip=Preostalo za isporuku
+OtherSendingsForSameOrder=Ostale isporuke za ovu narudžbu
+SendingsAndReceivingForSameOrder=Isporuke i primke za ovu narudžbu
+SendingsToValidate=Isporuke za ovjeru
+StatusSendingCanceled=Poništeno
+StatusSendingDraft=Skica
+StatusSendingValidated=Ovjereno (proizvodi za isporuku ili su isporučeni)
+StatusSendingProcessed=Obrađen
+StatusSendingDraftShort=Skica
+StatusSendingValidatedShort=Ovjereno
+StatusSendingProcessedShort=Obrađen
+SendingSheet=Otpremni list
+ConfirmDeleteSending=Jeste li sigurni da želite izbrisati ovu pošiljku?
+ConfirmValidateSending=jeste li sigurni da želite ovjeriti ovu pošiljku sa referencom <b>%s</b> ?
+ConfirmCancelSending=Jeste li sigurni da želite poništiti ovu pošiljku?
+DocumentModelSimple=Jednostavan model dokumenta
+DocumentModelMerou=Merou A5 model
+WarningNoQtyLeftToSend=Upozorenje, nema prozvoda za isporuku.
+StatsOnShipmentsOnlyValidated=Statistika se vodi po otpremnicama koje su ovjerene. Korišteni datum je datum ovjere otpremnice (planirani datum isporuke nije uvjek poznat).
+DateDeliveryPlanned=Planirani dan isporuke
+DateReceived=Datum primitka pošiljke
+SendShippingByEMail=Pošalji pošiljku putem e-pošte
+SendShippingRef=Podnošenje otpeme %s
+ActionsOnShipping=Događaji na otpremnici
+LinkToTrackYourPackage=Poveznica za pračenje pošiljke
+ShipmentCreationIsDoneFromOrder=Trenutno, kreiranje nove otpremnice se radi iz kartice narudžbe.
+ShipmentLine=Stavka otpremnice
+ProductQtyInCustomersOrdersRunning=Količina proizvoda u otvorenim narudžbama kupaca
+ProductQtyInSuppliersOrdersRunning=Količina proizvoda u otvorenim narudžbama dobavljača
+ProductQtyInShipmentAlreadySent=Količina proizvoda s otvorenih narudžba kupaca već poslano
+ProductQtyInSuppliersShipmentAlreadyRecevied=Količina proizvoda s otvorenih narudžba dobavljača već primljeno
+NoProductToShipFoundIntoStock=Nije pronađen proizvod za isporuku u skladištu <b>%s</b>. Ispravite zalihe ili se vratite nazad i odaberite drugo skladište. 
+WeightVolShort=Težina/Volumen
+ValidateOrderFirstBeforeShipment=Prvo morate ovjeriti narudžbu prije izrade otpremnice.
+
+# Sending methods
+# ModelDocument
+DocumentModelTyphon=Kompletan model dokumenta za dostavnu primku (logo...)
+Error_EXPEDITION_ADDON_NUMBER_NotDefined=Konstanta EXPEDITION_ADDON_NUMBER nije definirana
+SumOfProductVolumes=Ukupni volumen proizvoda
+SumOfProductWeights=Ukupna težina proizvoda
+
+# warehouse details
+DetailWarehouseNumber= Skladišni detalji
+DetailWarehouseFormat= W:%s (Qty : %d)

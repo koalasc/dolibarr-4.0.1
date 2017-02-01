@@ -1,0 +1,87 @@
+# Dolibarr language file - Source file is en_US - trips
+ExpenseReport=Izvještaj troška
+ExpenseReports=Izvještaji troška
+Trips=Izvještaji troška
+TripsAndExpenses=Izvještaji troškova
+TripsAndExpensesStatistics=Statistika izvještaja troška
+TripCard=Kartica izvještaja troška
+AddTrip=Kreiraj izvještaj troška
+ListOfTrips=Popis izvještaja troškova
+ListOfFees=Popis pristojbi
+ShowTrip=Prikaži izvještaj troška
+NewTrip=Novi izvještaj troška
+CompanyVisited=Tvrtka/zaklada posječena
+FeesKilometersOrAmout=Iznos ili kilometri
+DeleteTrip=Obriši izvještaj troška
+ConfirmDeleteTrip=Jeste li sigurni da želite obrisati izvještaj o troškovima ?
+ListTripsAndExpenses=Popis izvještaja troškova
+ListToApprove=Čeka na odobrenje
+ExpensesArea=Sučelje izvještaja troška
+ClassifyRefunded=Označi 'Povrat'
+ExpenseReportWaitingForApproval=Novi izvještaj troška je predan za odobrenje
+ExpenseReportWaitingForApprovalMessage=Novi izvještaj troška je predan i čeka odobrenje.\n- Korisnik: %s\n- Period: %s\nKliknite ovdje za ovjeru: %s
+TripId=Izvještaj troška ID
+AnyOtherInThisListCanValidate=Osoba za obavjest za ovjeru.
+TripSociete=Više o tvrtci
+TripNDF=Informacije izvještaja troška
+PDFStandardExpenseReports=Standardni predložak za generiranje PDF dokumenta za izvještaje troškova
+ExpenseReportLine=Stavka izvještaja troška
+TF_OTHER=Ostalo
+TF_TRIP=Prijevoz
+TF_LUNCH=Ručak
+TF_METRO=Metro
+TF_TRAIN=Vlak
+TF_BUS=Autobus
+TF_CAR=Auto
+TF_PEAGE=Cestarina
+TF_ESSENCE=Gorivo
+TF_HOTEL=Hotel
+TF_TAXI=Taxi
+
+ErrorDoubleDeclaration=Objavili ste još jedan izvještaj troška u sličnom razdoblju.
+AucuneLigne=Još nije objavljen izvještaj troška
+
+ModePaiement=Način isplate
+
+VALIDATOR=Odgovorna osoba za odobrenje
+VALIDOR=Odobrio
+AUTHOR=Snimio
+AUTHORPAIEMENT=Platio
+REFUSEUR=Odbio
+CANCEL_USER=Obrisao
+
+MOTIF_REFUS=Razlog
+MOTIF_CANCEL=Razlog
+
+DATE_REFUS=Datum odbijanja
+DATE_SAVE=Datum ovjere
+DATE_CANCEL=Datum odustajanja
+DATE_PAIEMENT=Datum isplate
+
+BROUILLONNER=Ponovo otvori
+ValidateAndSubmit=Ovjeri i predaj za odobrenje
+ValidatedWaitingApproval=Ovjereno (čeka odobrenje)
+
+NOT_AUTHOR=Vi niste autor izvještaja troška. Operacija je prekinuta.
+
+ConfirmRefuseTrip=Jeste li sigurni da želite odbiti izvještaj o troškovima ?
+
+ValideTrip=Odobri izvještaj troška
+ConfirmValideTrip=Jeste li sigurni da želite odobriti izvještaj o troškovima ?
+
+PaidTrip=Isplati troškove
+ConfirmPaidTrip=Jeste li sigurni da želite promjeniti status izvještaja troškova u "Plaćeno" ?
+
+ConfirmCancelTrip=Jeste li sigurni da želite otkazati izvjetaj troškova ?
+
+BrouillonnerTrip=Vrati izvještaj troška nazad na status "Skica"
+ConfirmBrouillonnerTrip=Jeste li sigurni da želite staviti izvještaj troškova u status "Skica" ?
+
+SaveTrip=Ovjeri trošak
+ConfirmSaveTrip=Jeste li sigurni da želite ovjeriti izvještaj troškova ?
+
+NoTripsToExportCSV=Nema izvještaja troška za izvoz u ovom razdoblju.
+ExpenseReportPayment=Isplata izvještaja troška
+
+ExpenseReportsToApprove=Troškovi za odobrenje
+ExpenseReportsToPay=Troškovi za platiti
